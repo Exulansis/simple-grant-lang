@@ -68,6 +68,11 @@ describe('sgl', function() {
         it('multirole_satisfies_1', function() {
             assert(sgl.satisfies(p.employee_and_investor, r.enter_to_employee));
         });
+
+        it('grandma_extra_satisfies_extra', function() {
+            assert(sgl.satisfies([p.grandma_extra, p.employee_and_investor], r.extra));
+        })
+
     });
 });
 

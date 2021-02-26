@@ -65,7 +65,18 @@ function checkSatisfies(group, c, disjoint) {
             }
             return true;
         }
-    }
+    } else {
+        const customProperty = Object.keys(c)[0]
+        for (var i = 0; i < group.length; ++i) {
+            var p = group[i];
+            if (Array.isArray(p[customProperty])) {
+              return p[customProperty].includes(c[customProperty])
+            } else {
+              return p[customProperty] === c[customProperty]
+            }
+        }
+      }
+
     return false;
 }
 
